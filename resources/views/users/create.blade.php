@@ -1,4 +1,4 @@
-@extends('dashboard.layout.dashboard')
+@extends('dashboard.layout.app')
 
 @section('body')
     <h1 class="mb-0">Novo Usuário!</h1>

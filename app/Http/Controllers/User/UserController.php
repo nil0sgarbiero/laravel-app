@@ -25,11 +25,11 @@ class UserController extends Controller
     }
     public function index()
     {
-        $auth = User::findOrFail($id);
+        //$auth = User::findOrFail($id);
         $userid = auth()->user()->id;
         //dd($auth);
         // Verifique se o usuário autenticado é administrador OU é o proprietário do perfil
-        if (!auth()->user()->admin && $auth->id !== $userid) {
+        if (!auth()->user()->admin) {
             return redirect()->route('dashboard')->with('error', 'Acesso não autorizado');
         }
 
@@ -94,10 +94,11 @@ class UserController extends Controller
         $userid = auth()->user()->id;
         //dd($auth);
         // Verifique se o usuário autenticado é administrador OU é o proprietário do perfil
-        if (!auth()->user()->admin && $auth->id !== $userid) {
-            return redirect()->route('dashboard')->with('error', 'Acesso não autorizado'); // Acesso não autorizado
+        if (!auth()->user()->admin ){
+            if ($auth->id !== $userid) {
+                return redirect()->route('dashboard')->with('error', 'Acesso não autorizado'); // Acesso não autorizado
+            }
         }
-
         $users = User::findOrFail($id);
 
         return view('users.edit', compact('users'));
@@ -129,6 +130,8 @@ class UserController extends Controller
 //        $users = User::findOrFail($id);
 //
 //        $users->update($request->all());
+        //$auth = User::findOrFail($id);
+        $userid = auth()->user()->id;
         $user = User::findOrFail($id);
 
         $user->name = $request->input('name');
@@ -146,7 +149,17 @@ class UserController extends Controller
 
         if ($user->isDirty()) {
             $user->save();
+            if (!auth()->user()->admin ){
+                if ($user->id == $userid) {
+                    return redirect()->route('dashboard')->with('success', 'Usuário Atualizado com Sucesso');
+                }
+            }
             return redirect()->route('users.index')->with('success', 'Usuário Atualizado com Sucesso');
+        }
+        if (!auth()->user()->admin ){
+            if ($user->id == $userid) {
+                return redirect()->route('dashboard')->with('info', 'Nenhuma alteração foi feita.');
+            }
         }
         return redirect()->route('users.index')->with('info', 'Nenhuma alteração foi feita.');
         //return redirect()->route('users.index')->with('success', 'Usuário Atualizado com Sucesso');
