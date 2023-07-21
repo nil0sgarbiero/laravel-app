@@ -4,7 +4,7 @@
     </a>
     <ul class="dropdown-menu">
         <li><a class="dropdown-item" href="{{ route('users.edit', ['user' => auth()->user()->id]) }}">Editar Usuário</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Ver Permissões</a></li>
         @if($isAdmin)
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="{{ route('users.index') }}">Cadastrar Usuário</a></li>

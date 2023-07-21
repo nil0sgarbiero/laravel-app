@@ -9,7 +9,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav text-white">
+                <ul class="navbar-nav text-white me-auto px-2">
                     @include('dashboard.layout.menu')
                 </ul>
             </div>

@@ -15,7 +15,7 @@ return [
         'prefix_schema' => env('DB_SCHEMA_PREFIX', ''),
         'edition' => env('DB_EDITION', 'ora$base'),
         'server_version' => env('DB_SERVER_VERSION', '19c'),
-        'load_balance' => env('DB_LOAD_BALANCE', 'yes'),
+        'load_balance' => env('DB_LOAD_BALANCE', 'no'),
         'max_name_len' => env('ORA_MAX_NAME_LEN', 30),
         'dynamic' => [],
         'sessionVars' => [
