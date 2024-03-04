@@ -10,7 +10,7 @@
 </head>
 <body>
     @include('dashboard.layout.header')
-<div class="container mt-4 py-5">
+<div class="container mx-auto mt-4 py-5">
     @yield('body')
 </div>
     @include('dashboard.layout.footer')

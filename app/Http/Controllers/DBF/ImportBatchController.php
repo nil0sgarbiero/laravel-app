@@ -38,7 +38,7 @@ class ImportBatchController extends Controller
         $startRecord = $batchNumber * $batchSize + 1;
         $endRecord = min(($batchNumber + 1) * $batchSize, count($batches));
 
-        return view('import_dbf_batch', compact('startRecord', 'endRecord', 'totalCount', 'batch', 'batchNumber'));
+        return view('dbf.import_dbf_batch', compact('startRecord', 'endRecord', 'totalCount', 'batch', 'batchNumber'));
     }
 
     public function insertBatch(Request $request)
@@ -145,6 +145,6 @@ class ImportBatchController extends Controller
         $startRecord = $batchNumber * $batchSize + 1;
         $endRecord = min(($batchNumber + 1) * $batchSize, count($batch)); // Alteração desta linha
 
-        return view('import_dbf_batch', compact('startRecord', 'endRecord', 'totalCount', 'batch', 'batchNumber'));
+        return view('dbf.import_dbf_batch', compact('startRecord', 'endRecord', 'totalCount', 'batch', 'batchNumber'));
     }
 }

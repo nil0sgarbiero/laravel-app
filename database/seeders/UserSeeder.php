@@ -15,7 +15,7 @@ class UserSeeder extends Seeder
             'username' => 'admin',
             'password' => Hash::make('admin'),
             'email' => 'admin@piacen.com.br',
-            'admin' => true,
+            'admin' => 1,
 
         ]);
     }

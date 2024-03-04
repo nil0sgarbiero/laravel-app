@@ -12,7 +12,7 @@ class ImportDbfController extends Controller
     public function index()
     {
         //Session::forget('dbf_records');
-        return view('import_dbf');
+        return view('DBF/import_dbf');
     }
 
     public function import(Request $request)
@@ -57,7 +57,7 @@ class ImportDbfController extends Controller
         // Criar uma instância do modelo
         $modelInstance = new $modelName;
 
-        return view('import_dbf_result', compact('columns', 'records', 'modelName', 'modelInstance'));
+        return view('dbf.import_dbf_result', compact('columns', 'records', 'modelName', 'modelInstance'));
     }
 
     public function insertRecords($modelName)
@@ -103,6 +103,29 @@ class ImportDbfController extends Controller
 
 
         return redirect()->route('import-dbf-batch-success');
+    }
+    public function updateCodItem()
+    {
+        try {
+            // Importar o modelo ESIT004
+            $modelName = 'App\Models\DBF\ESIT004'; // Substitua pelo namespace correto do seu modelo
+            $modelInstance = new $modelName;
+
+            // Obter todos os registros do modelo ESIT004
+            $records = $modelInstance->all();
+
+            // Atualizar o campo cod_item removendo os pontos da string
+            foreach ($records as $record) {
+                $codItem = $record->cod_item;
+                $codItem = str_replace('.', '', $codItem);
+                $record->cod_item = $codItem;
+                $record->save();
+            }
+
+            return redirect()->route('import-dbf')->with('success', 'Campo cod_item atualizado com sucesso.');
+        } catch (\Exception $e) {
+            return redirect()->route('import-dbf')->withErrors('Erro ao atualizar o campo cod_item: ' . $e->getMessage());
+        }
     }
 
 }
