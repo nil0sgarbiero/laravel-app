@@ -4,11 +4,13 @@
     <title>Piacentini - Painel</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body>
-    @include('layout.header')
-<div class="container mt-4 py-5">
-    @yield('body')
-</div>
-    @include('layout.footer')
+<body class="flex-auto place-content-stretch">
+    <div class="flex flex-col h-screen justify-between place-content-stretch">
+        @include('layout.header')
+
+            @yield('body')
+
+        @include('layout.footer')
+    </div>
 </body>
 </html>

@@ -1,31 +1,42 @@
-<li class="nav-item">
-    <a class="nav-link text-white" href="{{ route('home') }}">Principal</a>
+<li class="">
+    <a class="" href="{{ route('home') }}">Principal</a>
 </li>
-<li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
-        aria-expanded="true">
-        <span class="navbar-text text-white me-2">VDP</span>
-    </a>
-    <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Orçamento</a></li>
-        <li><a class="dropdown-item" href="#">Pedido</a></li>
-        {{--    @if ($isAdmin) --}}
-        <li>
-            <hr class="dropdown-divider">
-        </li>
-        <li><a class="dropdown-item" href="#">Copiar Pedido</a></li>
-        {{--    @endif --}}
-    </ul>
+<li class="">
+    <details>
+{{--        <a class="" href="#" role="button" data-bs-toggle="dropdown"--}}
+{{--           aria-expanded="true">--}}
+{{--            <span class="">VDP</span>--}}
+{{--        </a>--}}
+        <summary>VDP</summary>
+        <ul class="p-2">
+            <li><a class="" href="#">Orçamento</a></li>
+            <li><a class="" href="#">Pedido</a></li>
+            {{--    @if ($isAdmin) --}}
+            <li>
+                <hr class="">
+            </li>
+            <li><a class="" href="#">Copiar Pedido</a></li>
+            {{--    @endif --}}
+        </ul>
+    </details>
 </li>
-<li class="nav-item">
-    <a class="nav-link text-white" href="#">PCP</a>
+<li class="">
+    <a class="" href="#">PCP</a>
 </li>
-<li class="nav-item">
-    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
-        aria-expanded="true">
-        <span class="navbar-text text-white me-2">MAN</span>
-    </a>
-    <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Cadastro de Item</a></li>
-    </ul>
+<li class="">
+    <details>
+        {{--        <a class="" href="#" role="button" data-bs-toggle="dropdown"--}}
+        {{--           aria-expanded="true">--}}
+        {{--            <span class="">VDP</span>--}}
+        {{--        </a>--}}
+        <summary>MAN</summary>
+        <ul class="p-2">
+            <li><a class="" href="#">Copiar Item</a></li>
+            <li>
+                <hr class="">
+            </li>
+            <li><a class="" href="#">Incluir Item</a></li>
+            {{--    @endif --}}
+        </ul>
+    </details>
 </li>

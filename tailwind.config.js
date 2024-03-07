@@ -5,16 +5,17 @@ export default {
     require('./vendor/tallstackui/tallstackui/tailwind.config.js')
   ],
   content: [
-    './app/**/*.php',
-    './resources/**/*.html',
-    './resources/**/*.js',
-    './resources/**/*.jsx',
-    './resources/**/*.ts',
-    './resources/**/*.tsx',
-    './resources/**/*.php',
-    './resources/**/*.vue',
-    './resources/**/*.twig',
-    './vendor/tallstackui/tallstackui/src/**/*.php',
+      './resources/**/*.blade.php',
+      './app/**/*.php',
+      './resources/**/*.html',
+      './resources/**/*.js',
+      './resources/**/*.jsx',
+      './resources/**/*.ts',
+      './resources/**/*.tsx',
+      './resources/**/*.php',
+      './resources/**/*.vue',
+      './resources/**/*.twig',
+      './vendor/tallstackui/tallstackui/src/**/*.php',
   ],
   theme: {
     extend: {
@@ -26,6 +27,7 @@ export default {
   plugins: [
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
+    require("daisyui")
   ],
 }
 
