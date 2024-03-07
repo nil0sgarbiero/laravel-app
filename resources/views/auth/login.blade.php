@@ -17,13 +17,13 @@
                 @csrf
                 <div>
                     <label class="label">
-                        <span class="text-base label-text " >Usuário</span>
+                        <span class="text-black label-text " >Usuário</span>
                     </label>
                     <input id="username" name="username" type="text" placeholder="Nome de Usuário" class="w-full input input-bordered" />
                 </div>
                 <div>
                     <label class="label">
-                        <span class="text-base label-text">Senha</span>
+                        <span class="text-black label-text">Senha</span>
                     </label>
                     <input type="password" placeholder="Senha do Usuário"
                            class="w-full input input-bordered"  id="password" name="password"/>

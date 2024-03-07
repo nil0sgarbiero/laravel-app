@@ -1,4 +1,4 @@
-<h1 class="mb-0">Tela Principal Dashboard</h1>
+<h1 class="mb-0 bg-white h-full">Tela Principal Dashboard</h1>
 <hr/>
 @if(Session::has('success'))
     <div class="alert alert-success" role="alert">

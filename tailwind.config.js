@@ -2,7 +2,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 export default {
   presets: [
-    require('./vendor/tallstackui/tallstackui/tailwind.config.js')
+    //require('./vendor/tallstackui/tallstackui/tailwind.config.js')
   ],
   content: [
       './resources/**/*.blade.php',
@@ -15,7 +15,7 @@ export default {
       './resources/**/*.php',
       './resources/**/*.vue',
       './resources/**/*.twig',
-      './vendor/tallstackui/tallstackui/src/**/*.php',
+      //'./vendor/tallstackui/tallstackui/src/**/*.php',
   ],
   theme: {
     extend: {

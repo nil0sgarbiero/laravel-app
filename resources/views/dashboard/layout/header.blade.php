@@ -1,5 +1,5 @@
 <nav class="navbar bg-black ">
-    <div class="navbar-start basis-1/4">
+    <div class="navbar-start">
         <img src="{{ asset('img/logo3.png') }}" alt="Logo" class="img-fluid align-self-start" style="height: 40px;">
 {{--        <div class="dropdown">--}}
 {{--            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">--}}
@@ -10,13 +10,13 @@
 {{--            </ul>--}}
 {{--        </div>--}}
     </div>
-        <div class="navbar-center basis-1/2">
-            <ul class="menu menu-horizontal ">
+        <div class="navbar-center">
+            <ul class="text-white xl:menu-horizontal lg:min-w-max rounded-box" onclick="">
                 @include('dashboard.layout.menu')
             </ul>
         </div>
-        <div class="navbar-end basis-1/4">
-            <ul class="menu menu-horizontal ">
+        <div class="navbar-end">
+            <ul class="menu menu-horizontal text-white group">
                 @include('dashboard.layout.user')
             </ul>
 {{--        </div>--}}
